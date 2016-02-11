@@ -2,11 +2,11 @@ package fi.smakela.mongo.aggregation
 
 class Person {
 
-	static mapWith  = "mongo"
+    static mapWith  = "mongo"
 
-	String name
+    String name
 
     static constraints = {
-    	name nullable:false
+        name nullable:false
     }
 }

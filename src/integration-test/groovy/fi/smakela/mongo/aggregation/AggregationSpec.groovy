@@ -11,13 +11,13 @@ import com.mongodb.*
 @Rollback
 class AggregationSpec extends Specification {
 
-   void setupData() {
+    void setupData() {
     	new Person(name:'sami').save(flush:true)
     }
 
     void "Test that Person.collection.aggregate() returns correct class"() {
         given:
-        	setupData()
+            setupData()
         expect:
             // static AggregationOutput aggregate(final DBCollection collection, final List<? extends Map> pipeline)
             Person.collection.aggregate([[$match:["name":"sami"]]]) instanceof AggregationOutput
